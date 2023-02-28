@@ -1,0 +1,7 @@
+.navbar{
+    background: lightseagreen;  
+    height:30px;  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
