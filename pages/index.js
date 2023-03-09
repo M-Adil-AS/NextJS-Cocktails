@@ -5,6 +5,7 @@ import Loader from '../components/Loader'
 import {AppContext} from '../context/appContext'
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
 
 const Home = ()=> {
     const {state,dispatch} = useContext(AppContext)
@@ -29,7 +30,12 @@ const Home = ()=> {
                 <Typography sx={{m: 3, fontWeight: 'fontWeightLight'}} variant="h5" component="h4">
                     <b>Search favorite cocktail</b>
                 </Typography>
-                <TextField id="outlined-basic" variant="outlined" size='small' sx={{mx: 3}} color='primary' value={state.search} onChange={(e)=>dispatch({type:'search',payload:e.target.value})}/>
+                
+                <Grid container justifyContent="center">
+                    <Grid item sx={{minWidth: '190px'}} xs={8} sm={6} md={5} lg={4}>
+                        <TextField id="outlined-basic" variant="outlined" size='small' color='primary' value={state.search} onChange={(e)=>dispatch({type:'search',payload:e.target.value})} fullWidth/>
+                    </Grid>
+                </Grid>
                 <br/><br/>
             </div>
             
